@@ -1,0 +1,50 @@
+# Hyphanet systemd service
+# Copyright (C) 2025 blubskye
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# Source: https://github.com/blubskye/hyphanet_fedora_rpm
+
+[Unit]
+Description=Hyphanet - Anonymous Peer-to-Peer Network
+Documentation=https://www.hyphanet.org/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hyphanet
+Group=hyphanet
+WorkingDirectory=/var/lib/hyphanet
+EnvironmentFile=-/etc/default/hyphanet
+
+ExecStart=/opt/hyphanet/run.sh start
+ExecStop=/opt/hyphanet/run.sh stop
+
+Restart=on-failure
+RestartSec=10
+
+# Security hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ReadWritePaths=/var/lib/hyphanet
+
+# Resource limits
+LimitNOFILE=65536
+MemoryMax=2G
+
+[Install]
+WantedBy=multi-user.target

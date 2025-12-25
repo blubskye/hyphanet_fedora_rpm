@@ -1,0 +1,32 @@
+# Hyphanet daemon configuration
+# Copyright (C) 2025 blubskye
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# Source: https://github.com/blubskye/hyphanet_fedora_rpm
+
+# Java options
+JAVA_OPTS="-Xms128m -Xmx1024m"
+
+# Additional JVM arguments
+# JAVA_EXTRA_OPTS=""
+
+# Hyphanet data directory
+HYPHANET_DATA="/var/lib/hyphanet"
+
+# Web interface bind address (default: localhost only)
+# HYPHANET_BIND="127.0.0.1"
+
+# Web interface port (default: 8888)
+# HYPHANET_PORT="8888"
