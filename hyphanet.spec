@@ -30,7 +30,7 @@ Summary:        Anonymous peer-to-peer distributed data store
 License:        AGPL-3.0-or-later
 URL:            https://www.hyphanet.org/
 Source0:        https://github.com/hyphanet/fred/releases/download/build0%{build_number}/freenet-build0%{build_number}.jar
-Source1:        https://github.com/hyphanet/fred/releases/download/build0%{build_number}/freenet-ext-29.jar
+Source1:        https://github.com/hyphanet/fred/releases/download/build0%{build_number}/freenet-ext.jar
 Source2:        hyphanet.service
 Source3:        hyphanet.default
 Source4:        wrapper.conf
