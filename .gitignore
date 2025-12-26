@@ -1,0 +1,8 @@
+# Build artifacts (keep .rpm for distribution)
+*.src.rpm
+
+# Editor files
+*~
+*.swp
+.vscode/
+.idea/
